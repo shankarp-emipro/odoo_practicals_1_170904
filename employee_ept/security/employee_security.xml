@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="employee_ept_category" model="ir.module.category">
+        <field name="name">Employee</field>
+        <field name="description">This is the category for salesman and sales manager</field>
+    </record>
+
+    <record id="employee_ept_group_sales_man" model="res.groups">
+        <field name="name">SalesMan</field>
+        <field name="category_id" ref="employee_ept_category"/>
+    </record>
+
+    <record id="employee_ept_group_sales_manager" model="res.groups">
+        <field name="name">SalesManager</field>
+        <field name="category_id" ref="employee_ept_category"/>
+        <field name="implied_ids" eval="[(4, ref('employee_ept.employee_ept_group_sales_man'))]"/>
+    </record>
+</odoo>

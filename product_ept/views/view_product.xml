@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="view_product_tree" model="ir.ui.view">
+        <field name="name">product.ept.tree</field>
+        <field name="model">product.ept</field>
+        <field name="arch" type="xml">
+            <tree string="Product">
+                <field name="name"/>
+                <field name="sku"/>
+                <field name="barcode"/>
+                <field name="product_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_product_form" model="ir.ui.view">
+        <field name="name">product.ept.tree</field>
+        <field name="model">product.ept</field>
+        <field name="arch" type="xml">
+            <form string="Product">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="sku"/>
+                            <field name="barcode"/>
+                            <field name="can_sell"/>
+                            <field name="active"/>
+                            <field name="product_type"/>
+                            <field name="internal_note"/>
+                        </group>
+                        <group>
+                            <div width="100">
+                                <field name="product_image" widget="image" width="100" height="100"/>
+                            </div>
+                            <field name="sale_price"/>
+                            <field name="cost_price"/>
+                            <field name="warehouse"/>
+                        </group>
+                        <field name="website_description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="product_ept_filter" model="ir.ui.view">
+        <field name="name">product.ept.select</field>
+        <field name="model">product.ept</field>
+        <field name="arch" type="xml">
+            <search string="Search Product">
+                <field name="name"/>
+                <field name="sku"/>
+                <field name="barcode"/>
+                <field name="product_type"/>
+
+                <filter string="Can sell" name="can_sell" domain="[('can_sell', '=', True)]" help="To filter products which can be sold"/>
+                <filter string="Can't sell" name="cant_sell" domain="[('can_sell', '=', False)]" help="To filter products which can't be sold"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="product_action_view_products" model="ir.actions.act_window">
+        <field name="name">Product</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.ept</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>Please enter some data</p>
+        </field>
+    </record>
+
+    <menuitem id="product_root"
+              name="My Sales"/>
+
+    <menuitem id="product_products"
+              name="Products"
+              parent="product_root"/>
+
+    <menuitem id="product_products2"
+              name="Products"
+              parent="product_products"
+              action="product_action_view_products"/>
+
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="view_res_city_ept_tree" model="ir.ui.view">
+        <field name="name">res.city.ept.tree</field>
+        <field name="model">res.city.ept</field>
+        <field name="arch" type="xml">
+            <tree string="ResCity" editable="bottom">
+                <field name="name"/>
+                <field name="state_name"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_res_city_ept_filter" model="ir.ui.view">
+        <field name="name">res.city.ept.select</field>
+        <field name="model">res.city.ept</field>
+        <field name="arch" type="xml">
+            <search string="Search Res City">
+                <field name="name"/>
+                <field name="state_name"/>
+
+                <filter string="Active" name="is_active" domain="[('active', '=', True)]" help="To filter active records"/>
+                <filter string="Inactive" name="is_not_active" domain="[('active', '=', False)]" help="To filter inactive records"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="res_city_ept_action_view_cities" model="ir.actions.act_window">
+        <field name="name">ResCity</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.city.ept</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p>Please enter some data.</p>
+        </field>
+    </record>
+
+    <menuitem id="res_city_root"
+              name="C_Localization"/>
+
+    <menuitem id="res_city_localization"
+              name="Localization"
+              parent="res_city_root"/>
+
+    <menuitem id="res_city_cities"
+              name="City"
+              parent="res_city_localization"
+              action="res_city_ept_action_view_cities"/>
+</odoo>

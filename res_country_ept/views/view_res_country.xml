@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="view_res_country_tree" model="ir.ui.view">
+        <field name="name">res.country.ept.tree</field>
+        <field name="model">res.country.ept</field>
+        <field name="arch" type="xml">
+            <tree string="ResCountry">
+                <field name="name"/>
+                <field name="abbreviation"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_res_country_form" model="ir.ui.view">
+        <field name="name">res.country.ept.form</field>
+        <field name="model">res.country.ept</field>
+        <field name="arch" type="xml">
+            <form string="ResCountry">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="abbreviation"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_res_country_filter" model="ir.ui.view">
+        <field name="name">res.country.ept.select</field>
+        <field name="model">res.country.ept</field>
+        <field name="arch" type="xml">
+            <search string="Search Res Country">
+                <field name="name"/>
+                <field name="abbreviation"/>
+                <filter string="Active" name="is_active" domain="[('active', '=', True)]" help="To filter active records"/>
+                <filter string="Inactive" name="is_not_active" domain="[('active', '=', False)]" help="To filter inactive records"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="res_country_action_view_countries" model="ir.actions.act_window">
+        <field name="name">ResCountries</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.country.ept</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p>Please enter some data</p>
+        </field>
+    </record>
+
+    <menuitem id="res_country_root"
+              name="Localization"/>
+
+    <menuitem id="res_country_countries"
+              name="Countries"
+              parent="res_country_root"
+              action="res_country_action_view_countries"/>
+</odoo>

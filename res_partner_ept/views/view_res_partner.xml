@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_res_partner_tree" model="ir.ui.view">
+        <field name="name">res.partner.ept.tree</field>
+        <field name="model">res.partner.ept</field>
+        <field name="arch" type="xml">
+            <tree string="Restaurant Partner">
+                <field name="name"/>
+                <field name="street1"/>
+                <field name="street2"/>
+                <field name="city"/>
+                <field name="state"/>
+                <field name="zip_code"/>
+                <field name="country"/>
+                <field name="birthdate"/>
+                <field name="age"/>
+                <field name="weight"/>
+                <field name="description"/>
+                <field name="gender"/>
+                <field name="details"/>
+                <field name="is_spectacles"/>
+                <field name="photo" widget="image"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_res_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.ept.form</field>
+        <field name="model">res.partner.ept</field>
+        <field name="arch" type="xml">
+            <form string="Restaurant Partner">
+                <sheet>
+                    <div>
+                        <h2>
+                            Create new restaurant partner
+                        </h2>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="street1" required="True"/>
+                            <field name="street2"/>
+                            <field name="city" readonly="True"/>
+                            <field name="state"/>
+                            <field name="zip_code"/>
+                        </group>
+
+                        <group>
+                            <div width="100">
+                                <field name="photo" widget="image" width="100" height="100"/>
+                            </div>
+                            <field name="is_spectacles"/>
+                            <field name="country"/>
+                            <field name="birthdate"/>
+                            <field name="age"/>
+                            <field name="weight"/>
+                            <field name="description"/>
+                            <field name="gender" widget="radio"/>
+                        </group>
+                        <div>
+                            <b>Details</b>
+                        </div>
+                        <field name="details"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_partner_action_view_customers" model="ir.actions.act_window">
+        <field name="name">Restaurant Partner</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner.ept</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p>
+                You must enter all details of the restaurant partner.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="res_partner_contacts_root"
+              name="Contacts"/>
+
+    <menuitem id="res_partner_customers"
+              name="Customers"
+              parent="res_partner_contacts_root"
+              action="res_partner_action_view_customers"/>
+
+    <menuitem id="res_partner_customers2"
+              name="Customers"
+              parent="res_partner_customers"
+              action="res_partner_action_view_customers"/>
+</odoo>

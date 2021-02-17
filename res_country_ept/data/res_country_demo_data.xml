@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="res_country_demo_data1" model="res.country.ept">
+        <field name="name">United States</field>
+        <field name="abbreviation">US</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="res_country_demo_data2" model="res.country.ept">
+        <field name="name">India</field>
+        <field name="abbreviation">IN</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="res_country_demo_data3" model="res.country.ept">
+        <field name="name">Nepal</field>
+        <field name="abbreviation">NP</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="res_country_demo_data4" model="res.country.ept">
+        <field name="name">Afghanistan</field>
+        <field name="abbreviation">AF</field>
+        <field name="active">False</field>
+    </record>
+
+    <record id="res_country_demo_data5" model="res.country.ept">
+        <field name="name">Brazil</field>
+        <field name="abbreviation">BR</field>
+        <field name="active">True</field>
+    </record>
+</odoo>

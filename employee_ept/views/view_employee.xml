@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="view_employee_ept_tree" model="ir.ui.view">
+        <field name="name">employee.ept.tree</field>
+        <field name="model">employee.ept</field>
+        <field name="arch" type="xml">
+            <tree string="EmployeeEpt">
+                <field name="name"/>
+                <field name="department_name"/>
+                <field name="job_position"/>
+                <field name="salary"/>
+                <field name="hire_date"/>
+                <field name="gender"/>
+                <field name="job_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_employee_ept_form" model="ir.ui.view">
+        <field name="name">employee.ept.form</field>
+        <field name="model">employee.ept</field>
+        <field name="arch" type="xml">
+            <form string="EmployeeEpt">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="department_name"/>
+                        <field name="job_position"/>
+                        <field name="salary"/>
+                        <field name="hire_date"/>
+                        <field name="gender"/>
+                        <field name="job_type"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="employee_ept_filter" model="ir.ui.view">
+        <field name="name">employee.ept.select</field>
+        <field name="model">employee.ept</field>
+        <field name="arch" type="xml">
+            <search string="Employee Search">
+                <field name="name"/>
+                <field name="job_position"/>
+                <field name="department_name"/>
+
+                <filter string="Permanent Job" name="job_type" domain="[('job_type', '=', 'Permanent')]" help="To filter records where job_type is Permanent"/>
+                <filter string="Ad Hoc Job" name="job_type" domain="[('job_type', '=', 'Ad Hoc')]" help="To filter records where job_type is Ad Hoc"/>
+                <filter string="Male" name="gender_male" domain="[('gender', '=', 'Male')]" help="To filter records where gender is Male"/>
+                <filter string="Female" name="gender_male" domain="[('gender', '=', 'Female')]" help="To filter records where gender is Female"/>
+                <filter string="Transgender" name="gender_male" domain="[('gender', '=', 'Transgender')]" help="To filter records where gender is Transgender"/>
+
+                <group expand="0" string="Group By">
+                    <filter string="Job Position" name="job_position" domain="[]" context="{'group_by': 'job_position'}"/>
+                    <filter string="Department Name" name="department_name" domain="[]" context="{'group_by': 'department_name'}"/>
+                    <filter string="Job Type" name="job_type" domain="[]" context="{'group_by': 'job_type'}"/>
+                    <filter string="Gender" name="gender" domain="[]" context="{'group_by': 'gender'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="employee_ept_action_view_employees" model="ir.actions.act_window">
+        <field name="name">EmployeeEpt</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">employee.ept</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p>Please enter some data</p>
+        </field>
+    </record>
+
+    <menuitem id="employee_root"
+              name="Employee Data"/>
+
+    <menuitem id="employee_data"
+              name="Employees"
+              parent="employee_root"
+              action="employee_ept_action_view_employees"/>
+</odoo>

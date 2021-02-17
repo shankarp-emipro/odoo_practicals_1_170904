@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<record id="customer_data1" model="res.partner.ept2">
+    <field name="name">Rohan</field>
+    <field name="street1">Kalawad road</field>
+    <field name="street2">Ram park</field>
+    <field name="city">Rajkot</field>
+    <field name="state">Gujarat</field>
+    <field name="zip_code">360005</field>
+    <field name="country">India</field>
+    <field name="birthdate">1999-05-19</field>
+    <field name="age">22</field>
+    <field name="weight">60</field>
+    <field name="description">This is restaurant owner.</field>
+    <field name="gender">Male</field>
+    <field name="details">This is cool man.</field>
+    <field name="is_spectacles">False</field>
+</record>
+
+<record id="customer_data2" model="res.partner.ept2">
+    <field name="name">Soham</field>
+    <field name="street1">Kalawad road</field>
+    <field name="street2">Ram park</field>
+    <field name="city">Bhavanagar</field>
+    <field name="state">Gujarat</field>
+    <field name="zip_code">360005</field>
+    <field name="country">India</field>
+    <field name="birthdate">1999-05-19</field>
+    <field name="age">22</field>
+    <field name="weight">60</field>
+    <field name="description">This is restaurant owner.</field>
+    <field name="gender">Male</field>
+    <field name="details">This is cool man.</field>
+    <field name="is_spectacles">False</field>
+</record>
+
+<record id="customer_data3" model="res.partner.ept2">
+    <field name="name">Riya</field>
+    <field name="street1">Kalawad road</field>
+    <field name="street2">Ram park</field>
+    <field name="city">Rajkot</field>
+    <field name="state">Gujarat</field>
+    <field name="zip_code">360005</field>
+    <field name="country">India</field>
+    <field name="birthdate">1999-05-19</field>
+    <field name="age">22</field>
+    <field name="weight">60</field>
+    <field name="description">This is restaurant owner.</field>
+    <field name="gender">Female</field>
+    <field name="details">This is riya.</field>
+    <field name="is_spectacles">True</field>
+</record>
+
+<record id="customer_data4" model="res.partner.ept2">
+    <field name="name">Raj</field>
+    <field name="street1">Kalawad road</field>
+    <field name="street2">Ram park</field>
+    <field name="city">Rajkot</field>
+    <field name="state">Gujarat</field>
+    <field name="zip_code">360005</field>
+    <field name="country">India</field>
+    <field name="birthdate">1999-05-19</field>
+    <field name="age">22</field>
+    <field name="weight">60</field>
+    <field name="description">This is restaurant owner.</field>
+    <field name="gender">Male</field>
+    <field name="details">This is cool man.</field>
+    <field name="is_spectacles">False</field>
+</record>
+
+<record id="customer_data5" model="res.partner.ept2">
+    <field name="name">Keyur</field>
+    <field name="street1">Kalawad road</field>
+    <field name="street2">Ram park</field>
+    <field name="city">Junagadh</field>
+    <field name="state">Gujarat</field>
+    <field name="zip_code">360002</field>
+    <field name="country">India</field>
+    <field name="birthdate">1999-05-19</field>
+    <field name="age">22</field>
+    <field name="weight">60</field>
+    <field name="description">This is restaurant owner.</field>
+    <field name="gender">Male</field>
+    <field name="details">This is cool man.</field>
+    <field name="is_spectacles">True</field>
+</record>
+</odoo>
