@@ -4,7 +4,9 @@
         <field name="name">res.partner.ept.tree</field>
         <field name="model">res.partner.ept</field>
         <field name="arch" type="xml">
+
             <tree string="Restaurant Partner">
+                <button string="Search age" name="search_age" type="object"/>
                 <field name="name"/>
                 <field name="street1"/>
                 <field name="street2"/>
@@ -14,6 +16,7 @@
                 <field name="country"/>
                 <field name="birthdate"/>
                 <field name="age"/>
+                <field name="age_calculate"/>
                 <field name="weight"/>
                 <field name="description"/>
                 <field name="gender"/>
@@ -53,6 +56,7 @@
                             <field name="country"/>
                             <field name="birthdate"/>
                             <field name="age"/>
+                            <field name="age_calculate2" readonly="True" force_save="1"/>
                             <field name="weight"/>
                             <field name="description"/>
                             <field name="gender" widget="radio"/>

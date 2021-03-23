@@ -1,5 +1,5 @@
 {
-    'name': 'Restaurant Partner',
+    'name': 'Res Partner',
     'version': '1.0.0',
     'author': 'Shankar Pariyar',
     'category': 'Restaurant',

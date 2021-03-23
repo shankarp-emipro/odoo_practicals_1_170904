@@ -7,7 +7,7 @@ class ProductEpt(models.Model):
 
     name = fields.Char(string="Product Name", required=True, help="Enter product name")
     sku = fields.Char(string="SKU", help="Enter sku")
-    barcode = fields.Char(string="Barcode", help="Enter barcode")
+    barcode = fields.Char(string="Barcode", help="Enter product_barcode")
     can_sell = fields.Boolean(string="Can Sell", help="Tick if can sell")
     product_type = fields.Selection(selection=[
         ('Storable', 'Storable'),
