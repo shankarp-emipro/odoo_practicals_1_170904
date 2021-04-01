@@ -10,7 +10,9 @@
     'data': [
         'views/view_res_country.xml',
         'security/ir.model.access.csv',
-        'data/res_country_demo_data.xml'
+        'data/res_country_demo_data.xml',
+        'report/country_report.xml',
+        'report/country_report_templates.xml'
     ],
     'installable': True,
     'auto_install': False
